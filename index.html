@@ -18,6 +18,7 @@
 </head>
 
 <body class="home">
+  <a class="skip-to-content" href="#main">Skip to content</a>
   <header class="primary-header flex">
     <div>
       <h1 class=" logo text-white fs-logo ff-apple uppercase">ASTRA</h1>
@@ -27,16 +28,20 @@
         aria-expanded="false">Menu</span></button>
     <nav>
       <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
-        <li class="active"><a class="uppercase text-white letter-spacing-2" href="index.html"><span>01</span>Active</a>
+        <li class="active"><a class="uppercase text-white letter-spacing-2" href="index.html"><span
+              aria-selected="true">01</span>Active</a>
         </li>
-        <li><a class="uppercase text-white letter-spacing-2" href="destination.html"><span>02</span>Destination</a></li>
-        <li><a class="uppercase text-white letter-spacing-2" href="crew.html"><span>03</span>Crew</a></li>
-        <li><a class="uppercase text-white letter-spacing-2" href="technology.html"><span>03</span>Technology</a></li>
+        <li><a class="uppercase text-white letter-spacing-2" href="destination.html"><span
+              aria-selected="true">02</span>Destination</a></li>
+        <li><a class="uppercase text-white letter-spacing-2" href="crew.html"><span
+              aria-selected="true">03</span>Crew</a></li>
+        <li><a class="uppercase text-white letter-spacing-2" href="technology.html"><span
+              aria-selected="true">03</span>Technology</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="grid-container grid-container--home">
+  <main id="main" class="grid-container grid-container--home">
     <div>
       <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">So, you want to travel to
         <span class="d-block fs-900 ff-serif text-white">Space</span>
@@ -51,8 +56,7 @@
       <!-- explore button -->
       <a href="#" class="large-button uppercase ff-serif  text-dark bg-white">Explore</a>
     </dir>
-
-  </div>
+  </main>
   <script src="index.js"></script>
 </body>
 

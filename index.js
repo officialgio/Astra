@@ -1,7 +1,6 @@
 const nav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav--toggle");
 
-// when someone clicks the hamburger menu
 navToggle.addEventListener("click", () => {
     const visible = nav.getAttribute("data-visible");
 
@@ -14,7 +13,3 @@ navToggle.addEventListener("click", () => {
         navToggle.setAttribute("aria-expanded", false);
     }
 });
-
-
-// if the menu is closed, open it
-// if the menu is open, close it
