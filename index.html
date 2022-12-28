@@ -18,14 +18,15 @@
 </head>
 
 <body class="home">
-  <header class="primary-haeder flex">
+  <header class="primary-header flex">
     <div>
-      <img src="./assets/logo.webp" alt="space logo" class="logo">
+      <h1 class=" logo text-white fs-logo ff-apple uppercase">ASTRA</h1>
+      <!-- <img src="./assets/logo.webp" alt="space logo" class="logo"> -->
     </div>
     <button class="mobile-nav--toggle" aria-controls="primary-navigation"><span class="sr-only"
         aria-expanded="false">Menu</span></button>
     <nav>
-      <ul id="primary-navigation" class="primary-navigation underline-indicators flex">
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
         <li class="active"><a class="uppercase text-white letter-spacing-2" href="index.html"><span>01</span>Active</a>
         </li>
         <li><a class="uppercase text-white letter-spacing-2" href="destination.html"><span>02</span>Destination</a></li>
@@ -52,6 +53,7 @@
     </dir>
 
   </div>
+  <script src="index.js"></script>
 </body>
 
 </html>
