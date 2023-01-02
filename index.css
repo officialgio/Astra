@@ -113,7 +113,7 @@ body {
 img,
 picture {
     max-width: 100%;
-    display: block;
+    /* display: block; */
 }
 
 /* make form elements easier to work with */
@@ -167,6 +167,10 @@ button {
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 
+}
+
+.flow-space--small {
+    --flow-space: .75rem;
 }
 
 /* container should be similar to the grid-container */
@@ -492,9 +496,10 @@ button {
 
 .underline-indicators > * {
     cursor: pointer;
-    padding: var(--underline-gap, 1rem) 0;
+    padding: var(--underline-gap, .5rem) 0;
     border-bottom: .3rem solid hsl(var(--clr-white) / 0) !important;
     position: relative;
+    background-color: transparent;
 }
 
 /* .underline-indicators>*:hover,
@@ -577,7 +582,6 @@ body {
 }
 
 /* home */
-
 .home {
     background-image: url(./assets/space-mobile.jpeg);
 }
@@ -589,16 +593,45 @@ body {
     }
 }
 
+/* destination */
+.destination {
+    background-image: url(./assets/background-destination-desktop.jpeg);
+}
 
-/* https: //stackoverflow.com/questions/58087446/all-media-queries-for-iphone-13-pro-max-mini-and-older-iphones
-
-/* ----------- Older iPhones (X, Xs, XR and 11) ----------- */
-/* 1792x828px at 326ppi */
-/* @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
-    .home {
+@media (min-width: 35rem) {
+    .destination {
         background-position: center center;
+        background-image: url(./assets/background-destination-tablet.jpeg);
     }
-} */
+}
+
+@media (min-width: 45rem) {
+    .destination {
+        background-image: url(./assets/background-destination-desktop.jpeg);
+    }
+} 
+
+
+/* crew */
+.crew {
+    background-image: url(assets/background-crew-mobile.jpeg);
+}
+
+@media (min-width: 35rem) {
+    .crew {
+        background-position: center center;
+        background-image: url(assets/background-crew-tablet.jpeg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .crew {
+        background-position: center center;
+        background-image: url(/assets/background-crew-desktop.jpeg);
+    }
+}
+
+
 
 /* ----------------------------- */
 /* Layout                        */
@@ -631,7 +664,7 @@ body {
         'content';
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
     grid-area: image;
     max-width: 60%;
 }
@@ -651,10 +684,39 @@ body {
     margin-top: 2.5rem;
 }
 
-/* You could create a fixed class for this */
 .destination-meta p {
-    font-size: 1.75rem;
+    font-size: 1.75rem; /* You could create a fixed class for this */
 }
+
+/* crew layout */
+.grid-container--crew {
+    --flow-space: 2rem;
+    grid-template-areas: 
+        'title'
+        'image'
+        'tabs'
+        'content';
+}
+
+.grid-container--crew > picture {
+    grid-area: image;
+    max-width: 60%;
+    border-bottom: 1px solid hsl( var(--clr-white) / .1);
+}
+
+.grid-container--crew > .dot-indicators {
+    grid-area: tabs;
+}
+
+.grid-container--crew > .crew-details {
+    grid-area: content;
+}
+
+.crew-details h2 {
+    color: hsl( var(--clr-white) / .5);
+}
+
+
 
 @media (min-width: 35em) {
     .numbered-title {
@@ -665,6 +727,15 @@ body {
     .destination-meta {
         flex-direction: row;
         justify-content: space-evenly;
+    }
+
+    .grid-container--crew {
+        padding-bottom: 0;
+        grid-template-areas: 
+            'title'
+            'content'
+            'tabs'
+            'image';
     }
 }
 
@@ -697,13 +768,31 @@ body {
             '. image content .';
     }
 
-    .grid-container--destination > img {
+    .grid-container--destination > picture,
+    .grid-container--crew > picture {
         max-width: 90%;
+        align-self: end;
     }
 
     .destination-meta {
         --gap: min(6vw, 6rem);
         justify-content: start;
     }
+
+    .grid-container--crew {
+        grid-template-areas: 
+            '. title title .'
+            '. content image .'
+            '. tabs image .';
+    }
+
+    .grid-container--crew > .dot-indicators {
+        justify-self: start;
+    }
+
+
+[role="tab"]:focus {
+    color: limegreen;
+}
 
 }
