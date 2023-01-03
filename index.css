@@ -333,6 +333,7 @@ button {
     position: relative;
     display: inline-grid;
     padding: 0 2em;
+    margin-right: 2rem;
     aspect-ratio: 1;
     place-items: center;
     text-decoration: none;
