@@ -667,6 +667,7 @@ body {
 .grid-container--destination > picture {
     grid-area: image;
     max-width: 60%;
+    align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -768,10 +769,8 @@ body {
             '. image content .';
     }
 
-    .grid-container--destination > picture,
-    .grid-container--crew > picture {
+    .grid-container--destination > picture {
         max-width: 90%;
-        align-self: end;
     }
 
     .destination-meta {
@@ -780,6 +779,8 @@ body {
     }
 
     .grid-container--crew {
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+        justify-items: start;
         grid-template-areas: 
             '. title title .'
             '. content image .'
@@ -790,9 +791,16 @@ body {
         justify-self: start;
     }
 
+    .grid-container--crew > picture {
+        grid-column: span 2;
+        align-self: end;
+        max-width: 70%;
+    }
 
-[role="tab"]:focus {
+
+/* for tab testing purposes */
+/* [role="tab"]:focus {
     color: limegreen;
-}
+} */
 
 }
